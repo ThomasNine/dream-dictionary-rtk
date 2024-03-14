@@ -7,18 +7,18 @@ import {
   SavedPage,
   SearchPage,
 } from "../pages";
-
+import { AnimatePresence } from "framer-motion";
 const RoutePath = () => {
   return (
-    <div>
+    <AnimatePresence>
       <Routes>
         <Route path={"/"} element={<HomePage />} />
-        <Route path={"/search/:id"} element={<SearchPage />} />
+        <Route path={"/search/:searchedWords"} element={<SearchPage />} />
         <Route path={"/saved"} element={<SavedPage />} />
         <Route path={"/detail/:id"} element={<DetailPage />} />
         <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </AnimatePresence>
   );
 };
 

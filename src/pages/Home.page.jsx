@@ -25,8 +25,8 @@ const HomePage = () => {
       let modifiedTitle = i.BlogTitle.replace(/\[|\]|\s/g, "");
       return { ...i, BlogTitle: modifiedTitle };
     });
-    const handleClickHeaderCard = (BlogId) => {
-      nav(`/detail/${BlogId}`);
+    const handleClickHeaderCard = (BlogId, alphabet) => {
+      nav(`/detail/${BlogId}`, { state: { alphabet } });
     };
     return (
       <motion.div
@@ -37,22 +37,24 @@ const HomePage = () => {
       >
         <div className=" absolute w-full top-0 -z-20 h-screen bg-gradient-to-br from-purple-400 to-60% dark:from-purple-950"></div>
         <Navbar />
-        <div className=" my-20 sm:my-20">
-          <SearchBar />
-        </div>
-        <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-2 mx-3 sm:mx-0 mb-10">
-          {modifiedHeaders?.map((i) => (
-            <div
-              key={i.BlogId}
-              className=" flex-grow sm:flex-grow-0"
-              onClick={() => handleClickHeaderCard(i.BlogId)}
-            >
-              <HeaderCard
-                headerAlphabet={i.BlogTitle[0]}
-                header={i.BlogTitle}
-              />
-            </div>
-          ))}
+        <div className="container mx-auto px-0">
+          <div className=" my-10 sm:my-20">
+            <SearchBar />
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-2 gap-y-2 mx-3 sm:mx-0 mb-10">
+            {modifiedHeaders?.map((i) => (
+              <div
+                key={i.BlogId}
+                className=" flex-grow sm:flex-grow-0"
+                onClick={() => handleClickHeaderCard(i.BlogId, i.BlogTitle[0])}
+              >
+                <HeaderCard
+                  headerAlphabet={i.BlogTitle[0]}
+                  header={i.BlogTitle}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </motion.div>
     );
