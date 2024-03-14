@@ -1,7 +1,21 @@
-# Lat Htauk Bay Dan App With Json-server
+# Dream App With Json-server
 
 This project is a React application bootstrapped with Vite, utilizing JSON-server for mock API development. It serves as a quick setup for frontend development with a mock backend. This project idea was inspired by [https://github.com/sannlynnhtun-coding/Dream-Dictionary].
+
 ## Features
+
+### Responsive Design
+
+Our app is built with a responsive design to ensure a seamless experience across various devices and screen sizes. Whether you're using a desktop, tablet, or smartphone, our app adapts to provide an optimal viewing and interaction experience.
+
+### Save/Unsave Feature
+
+With our save/unsave feature, you can easily bookmark items of interest. Simply click the save button to add an item to your saved list, and click again to unsave it. This feature enhances usability by allowing you to keep track of your favorite items.
+
+### Notifications
+
+Stay informed with our notification system. Receive real-time notifications for important events such as successful saves or errors. Our notification system keeps you updated and ensures a smooth user experience.
+
   
 
 ## Installation(
